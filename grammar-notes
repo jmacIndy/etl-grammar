@@ -1,0 +1,25 @@
+This is to describe the XML schema used for the etl language
+
+<?xml version="1.0"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"
+targetNamespace="http://www.w3schools.com"
+xmlns="http://www.w3schools.com"
+elementFormDefault="qualified">
+
+<increment_xform>
+   <description>
+   <name>
+   <start_at>
+   <reset_flag>
+   <max_value>
+
+# need expression
+# need sorter
+# need stored procedure
+# need lookup
+# need filter
+# need aggregator
+# need joiner
+# need 
+
+</xs:schema>

@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+
+<etl name="readConfiguration"
+xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+xsi:noNamespaceSchemaLocation="etl.xsd">
+   <connection>
+      <name>PME_OWNER</name>
+      <description>MDE Database</description>
+      <host>localhost</host>
+      <db_name>PME_OWNER</db_name>
+      <user_id>PME_INF_USER</user_id>
+      <password>nascar02</password>
+   </connection>
+   <connection>
+      <name>PEM_OWNER</name>
+      <description>PEMT Database</description>
+      <host>localhost</host>
+      <db_name>PEM_OWNER</db_name>
+      <user_id>PEM_USER</user_id>
+      <password>nascar02</password>
+   </connection>
+   <source_table>
+      <name>PME_PEMT_ALRT_AREA_MSTR</name>
+      <description>Exceeded Alert by Manufacturing Area Configuration Table</description>
+      <connection>PME_OWNER</connection>
+      <column>
+         <name>ALRT_AREA_LMT_NBR</name>
+         <type>INT(11)</type>
+      </column>
+      <column>
+         <name>ALRT_AREA_GRD_CD</name>
+         <type>VARCHAR(10)</type>
+      </column>
+      <column>
+         <name>ALRT_AREA_DESC</name>
+         <type>VARCHAR(100)</type>
+      </column>
+      <column>
+         <name>ALRT_AREA_RLNG_TM_NBR</name>
+         <type>INT(11)</type>
+      </column>
+      <column>
+         <name>ALRT_AREA_RLNG_TM_UOM_CD</name>
+         <type>VARCHAR(10)</type>
+      </column>
+   </source_table>
+   <source_table>
+      <name>PME_PEMT_ALRT_ROOM_MSTR</name>
+      <description>Exceeded Alert by Room Configuration Table</description>
+      <connection>PME_OWNER</connection>
+      <column>
+         <name>ALRT_ROOM_LMT_NBR</name>
+         <type>INT(11)</type>
+      </column>
+      <column>
+         <name>ALRT_ROOM_GRD_CD</name>
+         <type>VARCHAR(10)</type>
+      </column>
+      <column>
+         <name>ALRT_ROOM_RLNG_TM_NBR</name>
+         <type>INT(11)</type>
+      </column>
+      <column>
+         <name>ALRT_ROOM_RLNG_TM_UOM_CD</name>
+         <type>VARCHAR(10)</type>
+      </column>
+   </source_table>
+   <target_table>
+      <name>PEM_TREND</name>
+      <description>Trends Table</description>
+      <connection>PEM_OWNER</connection>
+      <column>
+         <name>TREND_ID</name>
+         <type>INT(11)</type>
+      </column>
+   </target_table>
+</etl>

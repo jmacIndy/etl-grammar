@@ -1,0 +1,1 @@
+pyxbgen -u etl.xsd -m etl
